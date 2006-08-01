@@ -1,8 +1,8 @@
 /*
  *  See header file for a description of this class.
  *
- *  $Date: 2006/03/22 16:15:36 $
- *  $Revision: 1.5 $
+ *  $Date: 2006/06/27 12:23:54 $
+ *  $Revision: 1.2 $
  *  \author G. Cerminara - INFN Torino
  */
 
@@ -80,9 +80,9 @@ DTRecHitQuality::DTRecHitQuality(const ParameterSet& pset){
   debug = pset.getUntrackedParameter<bool>("debug");
   rootFileName = pset.getUntrackedParameter<string>("rootFileName");
   // the name of the simhit collection
-  simHitLabel = pset.getUntrackedParameter<string>("simHitLabel", "SimG4Object");
+  simHitLabel = pset.getUntrackedParameter<string>("simHitLabel", "g4SimHits");
   // the name of the 1D rec hit collection
-  recHitLabel = pset.getUntrackedParameter<string>("recHitLabel", "DTRecHit1DProducer");
+  recHitLabel = pset.getUntrackedParameter<string>("recHitLabel", "dt1DRecHits");
   // the name of the 2D rec hit collection
   segment2DLabel = pset.getUntrackedParameter<string>("segment2DLabel");
   // the name of the 4D rec hit collection
@@ -441,6 +441,11 @@ void DTRecHitQuality::compute(const DTGeometry *dtGeom,
 
     // Find the distance of the simhit from the wire
     float simHitWireDist = simHitDistFromWire(layer, wireId, *muSimHit);
+    // Skip simhits out of the cell
+    if(simHitWireDist>2.1) {
+      cout << "  [DTRecHitQuality]###Warning: The mu SimHit in out of the cell, skipping!" << endl;
+      continue; // Skip this cell
+    }
     GlobalPoint simHitGlobalPos = layer->toGlobal(muSimHit->localPosition());
       
     bool recHitReconstructed = false;
