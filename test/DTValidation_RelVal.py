@@ -35,7 +35,7 @@ process.load("Validation.DTRecHits.DTRecHitQuality_cfi")
 #process.seg2dvalidation.debug = cms.untracked.bool(True)
 
 process.maxEvents = cms.untracked.PSet(
-        input = cms.untracked.int32(10000)
+        input = cms.untracked.int32(-1)
         )
 
 process.options = cms.untracked.PSet(
@@ -60,14 +60,14 @@ fileNames = cms.untracked.vstring(
 # '/store/relval/CMSSW_2_1_9/RelValSingleMuPt1000/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/4AC212E4-0487-DD11-9A6D-000423D94A04.root'
 
 ### SingleMuon Pt100
-     # '/store/relval/CMSSW_2_1_9/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0000/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
-     #   '/store/relval/CMSSW_2_1_9/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0000/CAADA54A-AB85-DD11-95D6-000423D98F98.root',
-     #   '/store/relval/CMSSW_2_1_9/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/52BAB7DF-0487-DD11-95A3-000423D9989E.root'
+        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/2862A759-6FB2-DD11-B1A1-001617C3B6DE.root',
+        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/C23551E3-1CB4-DD11-AC37-001617C3B6FE.root',
+        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/F45F1117-6FB2-DD11-AA4A-000423D6A6F4.root'
 
 
 
 ### SingleMuon Pt10
-        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt10/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_test_SL5_v7/0000/B01D4C37-DBC1-DD11-96ED-003048945652.root'
+        # '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt10/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_test_SL5_v7/0000/B01D4C37-DBC1-DD11-96ED-003048945652.root'
         )
 
 )
