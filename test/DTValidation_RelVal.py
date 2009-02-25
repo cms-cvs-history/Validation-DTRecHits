@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("CazziMiei")
 
 ## General CMS
-process.load("Configuration.StandardSequences.FakeConditions_cff")
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 # process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 # process.GlobalTag.connect = cms.string('frontier://FrontierProd/CMS_COND_21X_DT')
 # process.GlobalTag.globaltag = "CRUZET4_V3P::All"

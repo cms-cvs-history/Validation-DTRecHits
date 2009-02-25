@@ -12,7 +12,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 )
 
 #include "Configuration/ReleaseValidation/data/Services.cfi"
-process.load("Configuration.StandardSequences.FakeConditions_cff")
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 
 process.load("SimGeneral.HepPDTESSource.pdt_cfi")
 
