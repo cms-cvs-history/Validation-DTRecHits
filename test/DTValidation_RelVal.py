@@ -9,6 +9,25 @@ process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 # process.GlobalTag.globaltag = "CRUZET4_V3P::All"
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
+# process.calibDB = cms.ESSource("PoolDBESSource",
+#     process.CondDBSetup,
+#     authenticationMethod = cms.untracked.uint32(0),
+#     toGet = cms.VPSet(cms.PSet(
+#         # VDrift
+#         #string record = "DTMtimeRcd"
+#         #string tag ="vDrift"
+#         # TZero
+#         #string record = "DTT0Rcd" 
+#         #string tag = "t0"
+#         #string tag = "t0_GRUMM"
+#         # TTrig
+#         record = cms.string('DTTtrigRcd'),
+#         tag = cms.string('ttrig')
+#     )),
+#     connect = cms.string('sqlite_file:/afs/cern.ch/user/p/pellicci/scratch0/DPG/LocalReco/CMSSW_3_1_X_2009-02-25-0700/src/CalibMuon/DTCalibration/test/ttrig.db')
+# )
+#process.prefer = cms.ESPrefer("PoolDBESSource","calibDB")
+
 # Geometry related
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cff")
 process.load("Geometry.DTGeometry.dtGeometry_cfi")
@@ -16,10 +35,10 @@ process.load("Geometry.CSCGeometry.cscGeometry_cfi")
 process.load("Geometry.DTGeometryBuilder.idealForDigiDtGeometry_cff")
 
 ## DT unpacker
-process.load("EventFilter.DTRawToDigi.DTFrontierCabling_cfi")
-process.load("EventFilter.DTRawToDigi.dtunpacker_cfi")
+# process.load("EventFilter.DTRawToDigi.DTFrontierCabling_cfi")
+# process.load("EventFilter.DTRawToDigi.dtunpacker_cfi")
 
-process.load("CalibMuon.Configuration.DT_FakeConditions_cff")
+# process.load("CalibMuon.Configuration.DT_FakeConditions_cff")
 
 ## DT local Reco
 process.load("RecoLocalMuon.Configuration.RecoLocalMuon_cff")
@@ -60,11 +79,10 @@ fileNames = cms.untracked.vstring(
 # '/store/relval/CMSSW_2_1_9/RelValSingleMuPt1000/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/4AC212E4-0487-DD11-9A6D-000423D94A04.root'
 
 ### SingleMuon Pt100
-        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/2862A759-6FB2-DD11-B1A1-001617C3B6DE.root',
-        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/C23551E3-1CB4-DD11-AC37-001617C3B6FE.root',
-        '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/F45F1117-6FB2-DD11-AA4A-000423D6A6F4.root'
-
-
+#         '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/2862A759-6FB2-DD11-B1A1-001617C3B6DE.root',
+#         '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/C23551E3-1CB4-DD11-AC37-001617C3B6FE.root',
+#         '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v2/0001/F45F1117-6FB2-DD11-AA4A-000423D6A6F4.root'
+        '/store/relval/CMSSW_3_1_0_pre1/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_30X_v1/0001/96DD29B8-49F4-DD11-B959-000423D98A44.root'
 
 ### SingleMuon Pt10
         # '/store/relval/CMSSW_3_0_0_pre2/RelValSingleMuPt10/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_test_SL5_v7/0000/B01D4C37-DBC1-DD11-96ED-003048945652.root'

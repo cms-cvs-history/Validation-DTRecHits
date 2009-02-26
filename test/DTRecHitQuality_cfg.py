@@ -50,6 +50,7 @@ process.load("SimMuon.Configuration.SimMuon_cff")
 #     module mix = MixingModule {
 #     int32 bunchspace = 25
 #     }
+
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
@@ -72,7 +73,7 @@ process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService
 process.source = cms.Source("PoolSource",
     debugFlag = cms.untracked.bool(True),
     debugVebosity = cms.untracked.uint32(1),
-    fileNames = cms.untracked.vstring('/store/relval/CMSSW_2_2_0/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_V9_v1/0000/946362E4-B4B9-DD11-A80E-001617E30F58.root')
+    fileNames = cms.untracked.vstring('/store/relval/CMSSW_3_1_0_pre1/RelValSingleMuPt100/GEN-SIM-DIGI-RAW-HLTDEBUG/IDEAL_30X_v1/0001/96DD29B8-49F4-DD11-B959-000423D98A44.root')
     )
 
 process.maxEvents = cms.untracked.PSet(
